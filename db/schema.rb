@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617114204) do
+ActiveRecord::Schema.define(version: 20160617120215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "hotels", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.uuid     "owner_id",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "hotels", ["owner_id"], name: "index_hotels_on_owner_id", using: :btree
 
   create_table "owners", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.datetime "created_at",                          null: false

@@ -27,6 +27,7 @@ gem 'foreman'
 gem 'responders'
 
 gem 'devise'
+gem 'ar-uuid'
 
 
 group :development, :test do

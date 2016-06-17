@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hotels
   devise_for :owners
   resources :owners
   # The priority is based upon order of creation: first created -> highest priority.

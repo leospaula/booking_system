@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ar-uuid (0.1.2)
+      activerecord
     arel (6.0.3)
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -190,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ar-uuid
   better_errors
   binding_of_caller
   devise
