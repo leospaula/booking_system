@@ -1,39 +1,39 @@
-class Admin::HotelsController < ApplicationController
+class Admin::HotelsController < Admin::AdminController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @hotels = Hotel.all
-    respond_with(@hotels)
+    respond_with(:admin, @hotels)
   end
 
   def show
-    respond_with(@hotel)
+    respond_with(:admin, @hotel)
   end
 
   def new
-    @hotel = Hotel.new
-    respond_with(@hotel)
+    @hotel = current_owner.hotels.build
+    respond_with(:admin, @hotel)
   end
 
   def edit
   end
 
   def create
-    @hotel = Hotel.new(hotel_params)
+    @hotel = current_owner.hotels.build(hotel_params)
     @hotel.save
-    respond_with(@hotel)
+    respond_with(:admin, @hotel)
   end
 
   def update
     @hotel.update(hotel_params)
-    respond_with(@hotel)
+    respond_with(:admin, @hotel)
   end
 
   def destroy
     @hotel.destroy
-    respond_with(@hotel)
+    respond_with(:admin, @hotel)
   end
 
   private
@@ -42,6 +42,6 @@ class Admin::HotelsController < ApplicationController
     end
 
     def hotel_params
-      params.require[:hotel].permit :name, :description, :owner_id
+      params.require(:hotel).permit :name, :description, :owner_id
     end
 end

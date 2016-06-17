@@ -39,6 +39,8 @@ GEM
     ar-uuid (0.1.2)
       activerecord
     arel (6.0.3)
+    autoprefixer-rails (6.3.6.2)
+      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -46,6 +48,11 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-material-design (0.2.2)
+      bootstrap-sass (~> 3.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -195,6 +202,8 @@ DEPENDENCIES
   ar-uuid
   better_errors
   binding_of_caller
+  bootstrap-material-design
+  bootstrap-sass
   devise
   dotenv-rails
   foreman

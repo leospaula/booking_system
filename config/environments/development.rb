@@ -46,9 +46,6 @@ Rails.application.configure do
      
      g.scaffold_controller :responders_controller
      
-     
-     # When we generate a new migration, the id will be set to a uuid as default.
-     g.orm :active_record, primary_key_type: :uuid
  
      # Disabling some generators
      g.helper      = false

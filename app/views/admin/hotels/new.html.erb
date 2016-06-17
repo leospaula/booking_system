@@ -1,5 +1,10 @@
-<h1>New Hotel</h1>
+<div class="container">
+  <div class="col-sm-4 col-sm-offset-4">
+    <h1 class="form-signin-heading">New Hotel</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Back', hotels_path %>
+    <%= link_to 'Back', admin_hotels_path, {:class => "btn btn-default"} %>
+
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <% @hotels.each do |hotel|%>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div><%= hotel.name %></div>
+        <div><%= hotel.description %></div>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  <% end %>
+</div>

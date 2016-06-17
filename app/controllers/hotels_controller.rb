@@ -13,7 +13,7 @@ class HotelsController < ApplicationController
   end
 
   def new
-    @hotel = Hotel.new
+    @hotel = current_owner.hotels.build
     respond_with(@hotel)
   end
 
@@ -21,7 +21,7 @@ class HotelsController < ApplicationController
   end
 
   def create
-    @hotel = Hotel.new(hotel_params)
+    @hotel = current_owner.hotels.build(hotel_params)
     @hotel.save
     respond_with(@hotel)
   end

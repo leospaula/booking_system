@@ -29,6 +29,9 @@ gem 'responders'
 gem 'devise'
 gem 'ar-uuid'
 
+gem 'bootstrap-sass'
+gem 'bootstrap-material-design'
+
 
 group :development, :test do
   gem 'rspec-rails'
