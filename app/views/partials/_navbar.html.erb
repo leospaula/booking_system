@@ -13,6 +13,16 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <% if owner_signed_in? %>
+          <li><%= link_to 'Hotels', admin_root_path %></li>
+          <li>
+ 
+          </li>
+        <% end %>
+        <li><%= link_to 'Reservations', bookings_path %></li>
+      </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <% if owner_signed_in? %>
           <li><%= link_to 'Admin Panel', admin_root_path %></li>

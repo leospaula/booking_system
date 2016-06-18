@@ -1,11 +1,11 @@
 class Admin::RoomsController < Admin::AdminController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  before_action :set_hotel, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_hotel, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @rooms = Room.all
+    @rooms = @hotel.rooms
     respond_with(:admin, @hotel, @rooms)
   end
 

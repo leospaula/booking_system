@@ -4,7 +4,7 @@ class Admin::HotelsController < Admin::AdminController
   respond_to :html
 
   def index
-    @hotels = Hotel.all
+    @hotels = current_owner.hotels
     respond_with(:admin, @hotels)
   end
 

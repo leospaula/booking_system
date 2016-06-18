@@ -1,13 +1,44 @@
-<div class="col-sm-8 col-sm-offset-2">
-  <% @hotels.each do |hotel|%>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div><%= hotel.name %></div>
-        <div><%= hotel.description %></div>
-      </div>
-      <div class="panel-body">
-        Panel content
-      </div>
-    </div>
-  <% end %>
-</div>
+<% if @hotels.empty? %>
+  <div class="col-sm-8 col-sm-offset-4">
+    <h1>There's no hotel yet.</h1>
+<% else %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <% @hotels.each do |hotel| %>
+      <% if !hotel.rooms.empty? %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3><%= hotel.name %><br/>
+            <small><%= hotel.description %></small></h3>
+          </div>
+          <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% hotel.rooms.each do |room| %>
+                    <tr>
+                      <td><%= room.type_r %></td>
+                      <td><%= number_to_currency(room.price) %></td>
+                      <td style="text-align: center;">
+                        <% if room.has_vacancy? %>
+                          <%= link_to 'Booking', new_booking_path(room_id: room.id), class: "btn btn-raised btn-xs" %>
+                        <% else %>
+                          <p>No Vacancy</p>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

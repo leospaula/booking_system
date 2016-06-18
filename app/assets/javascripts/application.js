@@ -16,4 +16,5 @@
 //= require bootstrap-material-design
 //= require turbolinks
 //= require_tree .
+//= require sweetalert
 

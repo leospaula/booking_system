@@ -31,6 +31,7 @@ gem 'ar-uuid'
 
 gem 'bootstrap-sass'
 gem 'bootstrap-material-design'
+gem 'sweetalert-rails'
 
 
 group :development, :test do

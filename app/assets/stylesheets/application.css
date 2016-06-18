@@ -12,6 +12,7 @@
  *
  *= require bootstrap-style
  *= require bootstrap-material-design
+ *= require sweetalert
  *= require_tree .
  *= require_self
  */

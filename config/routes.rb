@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   
+  resources :bookings, only: [:new, :create, :edit, :update, :index, :destroy]
+
+  
   namespace :admin do
       root 'hotels#index'
       resources :hotels do
