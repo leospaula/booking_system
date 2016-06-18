@@ -4,5 +4,6 @@ class Owner < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  has_many :hotels
+  has_many :hotels, dependent: :destroy
+  has_many :rooms, through: :hotels
 end

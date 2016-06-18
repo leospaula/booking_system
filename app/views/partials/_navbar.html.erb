@@ -15,13 +15,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if owner_signed_in? %>
+          <li><%= link_to 'Admin Panel', admin_root_path %></li>
           <li>
             <%= link_to(destroy_owner_session_path, method: 'delete') do %>
               Sair
             <% end %>
           </li>
         <% else %>
-          <li><%= link_to 'Admin', admin_root_path %></li>
+          <li><%= link_to 'Admin Panel', admin_root_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

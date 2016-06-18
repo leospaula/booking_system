@@ -20,8 +20,8 @@
         <% @hotels.each do |hotel| %>
           <tr>
             <td><%= hotel.name %></td>
-            <td><%= hotel.description %></td>
-            <td><%= link_to 'List Rooms', admin_hotel_path(hotel), class: "btn btn-raised btn-xs" %></td>
+            <td><%= truncate(hotel.description) %></td>
+            <td><%= link_to 'List Rooms', admin_hotel_rooms_path(hotel), class: "btn btn-raised btn-xs" %></td>
             <td style="text-align: center;">
               <%= link_to 'Detail', admin_hotel_path(hotel), class: "btn btn-raised btn-xs" %>
               <%= link_to 'Edit', edit_admin_hotel_path(hotel), class: "btn btn-raised btn-xs" %>
