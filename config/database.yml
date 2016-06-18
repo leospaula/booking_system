@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
-  database: webhotel_production
+  database: <%= ENV['DATABASE_NAME'] %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
